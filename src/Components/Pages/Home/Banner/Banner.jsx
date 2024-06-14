@@ -1,5 +1,5 @@
 import videoBg from '../../../../assets/videoBg1.mp4'
-import videoBg1 from '../../../../assets/videoBg2.mp4'
+// import videoBg1 from '../../../../assets/videoBg2.mp4'
 
 const Banner = () => {
 
@@ -14,8 +14,8 @@ const Banner = () => {
                         <div className='md:space-y-6 ml-12 text-white md:w-2/3'>
                             <h1 className='text-xl md:text-3xl lg:text-5xl '>Digital and Trusted Transport Logistic Company</h1>
                             <p className="md:text-xl">Our Experienced Team of Problem Solvers and a Commitment to always align with our client business goals and objectives.</p>
-                            <button className='btn bg-[#fec201] text-[#034460] border-none hover:text-black mr-4 '>See More...</button>
-                            <button className="btn text-white hover:bg-[hsl(10,100%,53%)] btn-outline">Join With Us</button>
+                            <button className='btn bg-primary text-secondary border-none hover:text-secondary mr-4 '>See More...</button>
+                            <button className="btn text-white hover:text-secondary hover:bg-primary btn-outline">Join With Us</button>
                         </div>
                     </div>
 
