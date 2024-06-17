@@ -10,6 +10,12 @@ export default {
         primary: "#fec201",
         secondary: "#034460",
       },
+      fontFamily :{
+        rancho: "'Epilogue', sans-serif"
+      },
+      clipPath: {
+        'custom': 'polygon(0 0, 100% 0, 100% 100%, 36% 100%)',
+      },
     },
   },
   plugins: [
