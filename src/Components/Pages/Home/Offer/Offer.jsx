@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Title from "../../../../Shared/Title/Title";
 
 
 const Offer = () => {
@@ -16,13 +17,7 @@ const Offer = () => {
 
     return (
         <div className=" mt-20 space-y-5  mb-20">
-            <div className="w-11/12 mx-auto lg:mb-[80px] lg:mt-[80px]">
-                <div className="flex  items-center  gap-5">
-                    <img src="https://transp-nextjs.vercel.app/_next/static/media/favicon.b004fee4.svg" alt="" />
-                    <h1 className="text-5xl font-rancho font-bold">What We Offer</h1>
-                </div>
-                <h1 className="mt-4  font-rancho">Welcome to our tranporation services agency. We are the best at our trans-portation service ever.</h1>
-            </div>
+            <Title title={'What We Offered'} subTitle={'Welcome to our tranporation services agency. We are the best at our trans-portation service ever.'} />
 
             <div style={{ backgroundImage: 'url(https://transp-nextjs.vercel.app/_next/static/media/bg-offer.3f5eb585.png)' }} className="sm:grid-cols-1 md:grid-cols-2 grid lg:grid-cols-3 w-full  gap-5 p-5 ">
                 {
