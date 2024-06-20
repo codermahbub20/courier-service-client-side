@@ -1,13 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
-
-import useAuth from '../../hooks/useAuth';
-
 import toast from 'react-hot-toast';
 import { TbFidgetSpinner } from "react-icons/tb";
 import { saveUser } from '../api/auth';
-import { getToken } from 'firebase/app-check';
+// import { getToken } from 'firebase/app-check';
 import { imageUpload } from '../api/utils';
+import useAuth from '../hooks/useAuth';
 
 const SignUp = () => {
 
@@ -39,8 +37,7 @@ const SignUp = () => {
       console.log(dbResponse)
       // result.user.email
 
-      //  token related
-      await getToken(result?.user?.email)
+    
       navigate('/')
       toast.success('SignUp Successful')
 
@@ -62,8 +59,8 @@ const SignUp = () => {
       console.log(dbResponse)
       // result.user.email
 
-      //  token related
-      await getToken(result?.user?.email)
+    //   //  token related
+    //   await getToken(result?.user?.email)
       navigate('/')
       toast.success('SignUp Successful')
 
@@ -79,7 +76,7 @@ const SignUp = () => {
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
-          <p className='text-sm text-gray-400'>Welcome to StayVista</p>
+          <p className='text-sm text-gray-400'>Welcome to Niyamat Courier</p>
         </div>
         <form onSubmit={handleSignUp}
           noValidate=''
@@ -96,7 +93,7 @@ const SignUp = () => {
                 name='name'
                 id='name'
                 placeholder='Enter Your Name Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-primary bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
             </div>
@@ -122,7 +119,7 @@ const SignUp = () => {
                 id='email'
                 required
                 placeholder='Enter Your Email Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-primary bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
             </div>
@@ -139,7 +136,7 @@ const SignUp = () => {
                 id='password'
                 required
                 placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-primary bg-gray-200 text-gray-900'
               />
             </div>
           </div>
@@ -147,7 +144,7 @@ const SignUp = () => {
           <div>
             <button
               type='submit'
-              className='bg-rose-500 w-full rounded-md py-3 text-white'
+              className='bg-secondary w-full rounded-md py-3 text-white'
             >
               {
                 loading ? <TbFidgetSpinner className='animate-spin mx-auto'></TbFidgetSpinner> :' Continue'
@@ -171,7 +168,7 @@ const SignUp = () => {
           Already have an account?{' '}
           <Link
             to='/login'
-            className='hover:underline hover:text-rose-500 text-gray-600'
+            className='hover:underline hover:text-primary text-gray-600'
           >
             Login
           </Link>
