@@ -19,7 +19,7 @@ const MenuDropdown = () => {
 
 
   return (
-    <div className='z-50'>
+    <div className='z-20'>
       <div className='flex flex-row  items-center gap-3'>
         {/* Become A Host btn */}
         <div className='hidden md:block'>
@@ -28,7 +28,7 @@ const MenuDropdown = () => {
         {/* Dropdown btn */}
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className='p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'
+          className='p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3  rounded-full cursor-pointer hover:shadow-md transition'
         >
           <AiOutlineMenu />
           <div className='hidden md:block'>
@@ -46,7 +46,7 @@ const MenuDropdown = () => {
 
       </div>
       {isOpen && (
-        <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm'>
+        <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 mt-3 top-12 text-sm'>
           <div className='flex flex-col cursor-pointer'>
             <Link
               to='/'

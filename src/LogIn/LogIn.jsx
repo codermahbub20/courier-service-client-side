@@ -53,7 +53,7 @@ const Login = () => {
       // result.user.email
 
       //  token related
-      await getToken(result?.user?.email)
+    //   await getToken(result?.user?.email)
       navigate(from || '/' , {replace : true})
       toast.success('Login Successful')
 
