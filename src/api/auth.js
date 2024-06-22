@@ -32,9 +32,9 @@ export const getRole = async (email)=>{
     return data.role
 }
 
-// Get all users
-export const getAllUsers = async() =>{
-    const { data } = await axiosSecure(`/users`)
+// Get all package
+export const getAllPackage = async() =>{
+    const { data } = await axiosSecure(`/package`)
     return data
 }
 
@@ -49,12 +49,3 @@ export const updateRole = async ({ email, role }) => {
     return data
   }
   
-//   // become a host
-// export const becomeHost = async email => {
-//   const currentUser = {
-//     email,
-//     status: 'Requested',
-//   }
-//   const { data } = await axiosSecure.put(`/users/${email}`, currentUser)
-//   return data
-// }

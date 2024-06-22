@@ -9,6 +9,7 @@ import Login from "../LogIn/LogIn";
 import DashboardLayout from "../LayOuts/DashBoardLayout";
 import Profile from "../Components/Common/Profile";
 import CreatePackage from "../Components/DashBoard/Host/CreatePackage/CreatePackage";
+import DeliverySchedule from "../Components/DashBoard/Host/DeliverySchedule/DeliverySchedule";
 
 
 export const router = createBrowserRouter([
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
             {
                 path: "create-package",
                 element: <CreatePackage />
+            },
+            {
+                path: "delivery-scheduling",
+                element: <DeliverySchedule />
             }
         ]
     }

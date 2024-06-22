@@ -1,6 +1,6 @@
 import { BsHouseAddFill } from "react-icons/bs";
 import MenuItem from "./MenuItem";
-import { MdHomeWork, MdOutlineManageHistory } from "react-icons/md";
+import {  MdOutlineManageHistory } from "react-icons/md";
 
 
 const HostMenu = () => {
@@ -12,11 +12,11 @@ const HostMenu = () => {
         address='create-package'
       />
 
-      <MenuItem
+      {/* <MenuItem
         icon={MdHomeWork}
         label='My Listings'
         address='my-listings'
-      />
+      /> */}
 
       <MenuItem
         icon={MdOutlineManageHistory}
