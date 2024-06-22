@@ -6,6 +6,9 @@ import Home from "../Components/Pages/Home/Home/Home";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import SignUp from "../SignUp/SignUp";
 import Login from "../LogIn/LogIn";
+import DashboardLayout from "../LayOuts/DashBoardLayout";
+import Profile from "../Components/Common/Profile";
+import CreatePackage from "../Components/DashBoard/Host/CreatePackage/CreatePackage";
 
 
 export const router = createBrowserRouter([
@@ -30,4 +33,23 @@ export const router = createBrowserRouter([
         path: "/login",
         element: <Login />
     },
+
+    {
+        path: "/dashboard",
+        element:
+            <DashboardLayout></DashboardLayout>
+        ,
+        children: [
+            {
+                path: "profile",
+                element: <Profile />
+            },
+            {
+                path: "create-package",
+                element: <CreatePackage />
+            }
+        ]
+    }
+
+
 ]);

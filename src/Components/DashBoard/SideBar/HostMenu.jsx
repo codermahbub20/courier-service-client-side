@@ -8,8 +8,8 @@ const HostMenu = () => {
     <>
       <MenuItem
         icon={BsHouseAddFill}
-        label='Add Room'
-        address='add-room'
+        label='Create Package'
+        address='create-package'
       />
 
       <MenuItem
@@ -20,8 +20,8 @@ const HostMenu = () => {
 
       <MenuItem
         icon={MdOutlineManageHistory}
-        label='Manage Bookings'
-        address='manage-bookings'
+        label='Delivery Schedule'
+        address='delivery-scheduling'
       />
     </>
   );

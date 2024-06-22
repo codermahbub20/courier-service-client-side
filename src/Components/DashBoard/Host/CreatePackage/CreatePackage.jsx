@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { addPackage } from "../../../api/package";
+import { addPackage } from "../../../../api/package";
 import toast from "react-hot-toast";
 
 
@@ -24,20 +24,23 @@ const CreatePackage = () => {
         }));
     }, []);
 
+    const update = 'Processing';
 
     const handleSubmit =async (e) => {
         e.preventDefault()
         const form = e.target;
         const senderName = form.senderName.value;
         const recipientName = form.recipientName.value;
+        const senderEmail = form.senderEmail.value;
+        const recipientMobile = form.recipientMobile.value;
         const origin = form.origin.value;
         const destination = form.destination.value;
         const pickup = form.pickup.value;
         const delivery = form.delivery.value;
         
-        const packageData = {packageTrackingNumber,senderName,recipientName,origin,destination,pickup,delivery}
+        const packageData = {packageTrackingNumber,senderName,senderEmail,recipientName,recipientMobile,origin,destination,pickup,delivery,update}
 
-        console.log(packageData)
+        console.table(packageData)
 
         try {
             const response = await addPackage( packageData);
@@ -52,6 +55,12 @@ const CreatePackage = () => {
 
     return (
         <div>
+            <div className="flex justify-center">
+                <img className="h-[50%]" src="https://t4.ftcdn.net/jpg/07/39/32/99/360_F_739329921_05Swu26SxilYCQOPqlWQ8WcPiw4gcm9S.jpg" alt="" />
+            </div>
+            <h1 className="text-2xl font-bold font-rancho text-secondary text-center mb-5">Create Package</h1>
+            <hr />
+        
             <form onSubmit={handleSubmit} >
                 <div className='md:flex md:px-24'>
                     <div className="form-control md:w-1/2">
@@ -66,6 +75,22 @@ const CreatePackage = () => {
                             <span className="label-text font-rancho text-xl">Recipient Name</span>
                         </label>
                         <input type="text" placeholder="Enter coffee chef" className="input input-bordered" name='recipientName' required />
+                    </div>
+                </div>
+{/* Sender email and receiver contact number */}
+                <div className='md:flex md:px-24'>
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text font-rancho text-xl">Sender Email</span>
+                        </label>
+                        <input type="text" placeholder="Enter Sender Email" className="input input-bordered" name='senderEmail' required />
+
+                    </div>
+                    <div className="form-control md:ml-4 md:w-1/2">
+                        <label className="label">
+                            <span className="label-text font-rancho text-xl">Recipient Mobile Number</span>
+                        </label>
+                        <input type="text" placeholder="Enter coffee chef" className="input input-bordered" name='recipientMobile' required />
                     </div>
                 </div>
 
