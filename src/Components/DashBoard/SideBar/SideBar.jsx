@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { GrLogout } from 'react-icons/gr'
 import { FcSettings } from 'react-icons/fc'
 import { AiOutlineBars } from 'react-icons/ai'
-import { BsGraphUp } from 'react-icons/bs'
 import useAuth from '../../../hooks/useAuth'
 import MenuItem from './MenuItem'
 import AdminMenu from './AdminMenu'
@@ -35,7 +34,7 @@ const Sidebar = () => {
       <div className='bg-gray-100 text-gray-800 flex justify-between md:hidden'>
         <div>
           <div className='block cursor-pointer p-4 font-bold'>
-          <Link to="/"><img src="https://transp-nextjs.vercel.app/assets/imgs/template/logo.svg" alt="Logo" /></Link>
+            <Link to="/"><img src="https://transp-nextjs.vercel.app/assets/imgs/template/logo-footer.svg" alt="Logo" /></Link>
           </div>
         </div>
 
@@ -54,7 +53,7 @@ const Sidebar = () => {
         <div>
           <div>
             <div className='w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-secondary mx-auto'>
-            <Link to="/"><img src="https://transp-nextjs.vercel.app/assets/imgs/template/logo.svg" alt="Logo" /></Link>
+              <Link to="/"><img src="https://transp-nextjs.vercel.app/assets/imgs/template/logo.svg" alt="Logo" /></Link>
             </div>
           </div>
 
@@ -62,14 +61,10 @@ const Sidebar = () => {
           <div className='flex flex-col justify-between flex-1 mt-6'>
 
             <nav>
-              <MenuItem
-                icon={BsGraphUp}
-                label='Statistics'
-                address='/dashboard'
-              />
+            
 
               {/*Host Menu Items */}
-              {role === 'host' && <HostMenu/> }
+              {role === 'host' && <HostMenu />}
 
               {/*Guest Menu Items */}
               {role === 'guest' && <GuestMenu />}

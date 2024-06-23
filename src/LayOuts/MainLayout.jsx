@@ -5,7 +5,7 @@ import Footer from "../Shared/Footer/Footer";
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="font-rancho">
             <Navbar />
             <Outlet />
             <Footer />

@@ -48,4 +48,11 @@ export const updateRole = async ({ email, role }) => {
     const { data } = await axiosSecure.put(`/users/update/${email}`, currentUser)
     return data
   }
+
+// update action save data in database
+export const updateAction = async ({ update,id }) => {
+    const currentAction = {update }
+    const { data } = await axiosSecure.patch(`/package/${id}`, currentAction)
+    return data
+  }
   
