@@ -56,3 +56,9 @@ export const updateAction = async ({ update,id }) => {
     return data
   }
   
+
+  // Get all users
+export const getAllUsers = async() =>{
+    const { data } = await axiosSecure(`/users`)
+    return data
+}
