@@ -9,10 +9,11 @@ import { updateAction } from "../../../../api/auth"
 const TableRow = ({ pack,refetch }) => {
 
     const [isOpen, setIsOpen] = useState(false)
-    const modalHandler = async () => {
+
+    const modalHandler = async (selected) => {
       try {
        
-        const data = await updateAction({ update: pack?.update, id:pack?._id })
+        const data = await updateAction({ update: selected, id:pack?._id })
         console.log("Data returned from updateAction:", data);
         refetch()
         toast.success('Action updated!')

@@ -11,6 +11,7 @@ import Profile from "../Components/Common/Profile";
 import CreatePackage from "../Components/DashBoard/Host/CreatePackage/CreatePackage";
 import DeliverySchedule from "../Components/DashBoard/Host/DeliverySchedule/DeliverySchedule";
 import ManageUsers from "../Components/DashBoard/Admin/ManageUsers";
+import Tracking from "../Components/Pages/Home/PackageTracking/Tracking";
 
 
 export const router = createBrowserRouter([
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />
+            },
+            {
+                path: "/tracking",
+                element: <Tracking />
             },
 
         ]

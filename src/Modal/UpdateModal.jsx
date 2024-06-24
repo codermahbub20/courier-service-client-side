@@ -7,6 +7,8 @@ const actions = ['processing', 'in-transit', 'delivered']
 
 const UpdateModal = ({ setIsOpen, isOpen, modalHandler,pack }) => {
   const [selected, setSelected] = useState(pack?.update)
+  console.log(selected)
+  
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
@@ -75,7 +77,8 @@ const UpdateModal = ({ setIsOpen, isOpen, modalHandler,pack }) => {
                               }
                               value={action}
                             >
-                              {({ selected }) => (
+                              {
+                              ({ selected }) => (
                                 <>
                                   <span
                                     className={`block truncate ${
