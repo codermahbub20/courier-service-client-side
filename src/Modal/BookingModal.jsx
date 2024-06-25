@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Dialog, Transition } from '@headlessui/react'
 import { Elements } from '@stripe/react-stripe-js'
-import { format } from 'date-fns'
 import { Fragment } from 'react'
-import CheckoutForm from '../Form/CheckoutForm'
 import { loadStripe } from '@stripe/stripe-js'
+import CheckoutForm from '../Form/CheckoutForm'
 
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK)
 
@@ -40,33 +39,37 @@ const BookingModal = ({ closeModal, isOpen, bookingInfo }) => {
                                     as='h3'
                                     className='text-lg font-medium text-center leading-6 text-gray-900'
                                 >
-                                    Review Info Before Reserve
+                                    Review Info Before Booked
                                 </Dialog.Title>
                                 <div className='mt-2'>
                                     <p className='text-sm text-gray-500'>
-                                        Room: {bookingInfo.title}
+                                       Your Name: {bookingInfo?.yourName}
                                     </p>
                                 </div>
                                 <div className='mt-2'>
                                     <p className='text-sm text-gray-500'>
-                                        Location: {bookingInfo.location}
+                                        Recipient Name: {bookingInfo?.recipientName}
                                     </p>
                                 </div>
                                 <div className='mt-2'>
                                     <p className='text-sm text-gray-500'>
-                                        Guest: {bookingInfo.guest.name}
+                                        Destination: {bookingInfo?.destination}
                                     </p>
                                 </div>
                                 <div className='mt-2'>
                                     <p className='text-sm text-gray-500'>
-                                        From: {format(new Date(bookingInfo.from), 'PP')} - To:{' '}
-                                        {format(new Date(bookingInfo.to), 'PP')}
+                                       Tracking Number: {bookingInfo?.packageTrackingNumber?.trackingNumber}
                                     </p>
                                 </div>
 
                                 <div className='mt-2'>
                                     <p className='text-sm text-gray-500'>
-                                        Price: $ {bookingInfo.price}
+                                        Weight: {bookingInfo?.price}
+                                    </p>
+                                </div>
+                                <div className='mt-2'>
+                                    <p className='text-sm text-gray-500'>
+                                        Price: $ {bookingInfo?. weight}
                                     </p>
                                 </div>
                                 <hr className='mt-8 ' />

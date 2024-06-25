@@ -1,9 +1,18 @@
 import { useEffect, useState } from "react";
+import useAuth from "../../../../hooks/useAuth";
+import BookingModal from "../../../../Modal/BookingModal";
 
 const OnlineBookings = () => {
     const [packageTrackingNumber, setPackageTrackingNumber] = useState({});
     const [weight, setWeight] = useState('');
     const [price, setPrice] = useState(0);
+    const [bookingInfo, setBookingInfo] = useState(null);
+    let [isOpen, setIsOpen] = useState(false)
+    const { user } = useAuth();
+
+    const closeModal = () => {
+        setIsOpen(false);
+    }
 
     const generateTrackingNumber = () => {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -41,7 +50,7 @@ const OnlineBookings = () => {
         const delivery = form.delivery.value;
         const pType = form.pType.value;
 
-        const packageData = {
+        const bookingData = {
             packageTrackingNumber,
             yourName,
             yourEmail,
@@ -53,11 +62,19 @@ const OnlineBookings = () => {
             pType,
             weight,
             delivery,
-            update
+            update,
+            price,
+            user
         };
 
-        console.table(packageData);
+        setBookingInfo(bookingData);
+
+        if (price > 0) {
+            setIsOpen(true);
+        }
+
     };
+
 
     return (
         <div>
@@ -149,14 +166,8 @@ const OnlineBookings = () => {
                     <input className='btn mt-3 w-full mx-auto border-2 border-primary text-xl text-white hover:bg-primary bg-secondary' type="submit" value="Booked Package" />
                 </div>
             </form>
+            <BookingModal closeModal={closeModal} isOpen={isOpen} bookingInfo={bookingInfo} />
 
-            {price > 0 && (
-                <div className="text-center mt-5">
-                    <button className="btn bg-blue-700 text-white text-xl p-3 rounded-lg">
-                        Pay - ${price}
-                    </button>
-                </div>
-            )}
         </div>
     );
 };
