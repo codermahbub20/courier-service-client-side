@@ -12,6 +12,7 @@ import CreatePackage from "../Components/DashBoard/Host/CreatePackage/CreatePack
 import DeliverySchedule from "../Components/DashBoard/Host/DeliverySchedule/DeliverySchedule";
 import ManageUsers from "../Components/DashBoard/Admin/ManageUsers";
 import Tracking from "../Components/Pages/Home/PackageTracking/Tracking";
+import OnlineBookings from "../Components/Pages/Home/OnlineBooking/OnlineBookings";
 
 
 export const router = createBrowserRouter([
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
             {
                 path: "/tracking",
                 element: <Tracking />
+            },
+            {
+                path: "/online-booking",
+                element: <OnlineBookings />
             },
 
         ]
