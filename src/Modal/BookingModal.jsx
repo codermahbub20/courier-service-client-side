@@ -64,12 +64,12 @@ const BookingModal = ({ closeModal, isOpen, bookingInfo }) => {
 
                                 <div className='mt-2'>
                                     <p className='text-sm text-gray-500'>
-                                        Weight: {bookingInfo?.price}
+                                        Weight:{bookingInfo?. weight}
                                     </p>
                                 </div>
                                 <div className='mt-2'>
-                                    <p className='text-sm text-gray-500'>
-                                        Price: $ {bookingInfo?. weight}
+                                    <p className='text-sm text-green-500'>
+                                        Delivery Charge: ${bookingInfo?.price}
                                     </p>
                                 </div>
                                 <hr className='mt-8 ' />
