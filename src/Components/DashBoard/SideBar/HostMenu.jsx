@@ -23,6 +23,12 @@ const HostMenu = () => {
         label='Delivery Schedule'
         address='delivery-scheduling'
       />
+
+      <MenuItem
+        icon={MdOutlineManageHistory}
+        label='Online Schedule'
+        address='online-scheduling'
+      />
     </>
   );
 };

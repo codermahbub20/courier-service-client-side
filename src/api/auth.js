@@ -56,6 +56,14 @@ export const updateAction = async ({ update,id }) => {
     const { data } = await axiosSecure.patch(`/package/${id}`, currentAction)
     return data
   }
+
+// update action save data in database
+export const updateActionOnline = async ({ update,id }) => {
+    const currentAction = {update }
+    console.log(update)
+    const { data } = await axiosSecure.patch(`/bookings/${id}`, currentAction)
+    return data
+  }
   
 
   // Get all users
