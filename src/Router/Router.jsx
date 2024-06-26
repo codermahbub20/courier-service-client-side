@@ -18,6 +18,7 @@ import OnlineSchedule from "../Components/DashBoard/Host/OnlineSchedule/OnlineSc
 import PrivateRoute from "./PrivateRoute";
 import HostRoute from "./HostRoute";
 import AdminRoute from "./AdminRoute";
+import Tracking1 from "../Components/Pages/Home/PackageTracking/UserPackageTracking/Tracking1";
 
 
 export const router = createBrowserRouter([
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
             {
                 path: "/tracking",
                 element: <Tracking />
+            },
+            {
+                path: "/online-tracking",
+                element: <Tracking1/>
             },
             {
                 path: "/online-booking",
