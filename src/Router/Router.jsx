@@ -15,10 +15,13 @@ import Tracking from "../Components/Pages/Home/PackageTracking/Tracking";
 import OnlineBookings from "../Components/Pages/Home/OnlineBooking/OnlineBookings";
 import MyBookings from "../Components/DashBoard/Guest/MyBookings";
 import OnlineSchedule from "../Components/DashBoard/Host/OnlineSchedule/OnlineSchedule";
-
+import PrivateRoute from "./PrivateRoute";
+import HostRoute from "./HostRoute";
+import AdminRoute from "./AdminRoute";
 
 
 export const router = createBrowserRouter([
+
 
     {
         path: "/",
@@ -35,7 +38,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/online-booking",
-                element: <OnlineBookings />
+                element: <PrivateRoute><OnlineBookings /></PrivateRoute>
             },
 
 
@@ -53,34 +56,50 @@ export const router = createBrowserRouter([
     {
         path: "/dashboard",
         element:
-            <DashboardLayout></DashboardLayout>
+            <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>
         ,
         children: [
             {
                 path: "profile",
-                element: <Profile />
+                element: <PrivateRoute><Profile /></PrivateRoute>
             },
             {
                 path: "create-package",
-                element: <CreatePackage />
+                element: <PrivateRoute>
+                    <HostRoute>
+                        <CreatePackage />
+                    </HostRoute>
+                </PrivateRoute>
             },
             {
                 path: "delivery-scheduling",
-                element: <DeliverySchedule />
+                element: <PrivateRoute>
+                    <HostRoute>
+                        <DeliverySchedule />
+                    </HostRoute>
+                </PrivateRoute>
             }
             ,
             {
                 path: "online-scheduling",
-                element: <OnlineSchedule />
+                element: <PrivateRoute>
+                    <HostRoute>
+                        <OnlineSchedule />
+                    </HostRoute>
+                </PrivateRoute>
             }
             ,
             {
                 path: "manage-users",
-                element: <ManageUsers />
+                element: <PrivateRoute>
+                    <AdminRoute>
+                        <ManageUsers />
+                    </AdminRoute>
+                </PrivateRoute>
             },
             {
                 path: "my-bookings",
-                element: <MyBookings />
+                element: <PrivateRoute><MyBookings /></PrivateRoute>
             },
 
         ]

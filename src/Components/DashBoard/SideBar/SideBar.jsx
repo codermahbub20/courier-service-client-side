@@ -61,7 +61,7 @@ const Sidebar = () => {
           <div className='flex flex-col justify-between flex-1 mt-6'>
 
             <nav>
-            
+           
 
               {/*Host Menu Items */}
               {role === 'host' && <HostMenu />}

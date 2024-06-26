@@ -15,7 +15,7 @@ const OnlineSchedule = () => {
 
     return (
         <>
-        <h1 className="text-2xl font-bold font-rancho text-center text-secondary">Delivery Schedule</h1>
+        <h1 className="text-2xl font-bold font-rancho text-center text-secondary">Online Booking Schedule</h1>
         <div className='container mx-auto px-4 sm:px-8'>
          
           <div className='py-8'>
