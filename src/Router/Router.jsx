@@ -13,6 +13,8 @@ import DeliverySchedule from "../Components/DashBoard/Host/DeliverySchedule/Deli
 import ManageUsers from "../Components/DashBoard/Admin/ManageUsers";
 import Tracking from "../Components/Pages/Home/PackageTracking/Tracking";
 import OnlineBookings from "../Components/Pages/Home/OnlineBooking/OnlineBookings";
+import MyBookings from "../Components/DashBoard/Guest/MyBookings";
+
 
 
 export const router = createBrowserRouter([
@@ -34,6 +36,7 @@ export const router = createBrowserRouter([
                 path: "/online-booking",
                 element: <OnlineBookings />
             },
+
 
         ]
     },
@@ -68,7 +71,12 @@ export const router = createBrowserRouter([
             {
                 path: "manage-users",
                 element: <ManageUsers />
-            }
+            },
+            {
+                path: "my-bookings",
+                element: <MyBookings />
+            },
+
         ]
     }
 

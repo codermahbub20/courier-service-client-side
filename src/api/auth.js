@@ -4,7 +4,7 @@ export const saveUser = async user =>{
 
     const currentUser ={
         email: user.email,
-        role: 'user',
+        role: 'guest',
         status: 'verified'
     }
 

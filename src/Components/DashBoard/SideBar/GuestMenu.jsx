@@ -14,8 +14,6 @@ const GuestMenu = () => {
         label='My Bookings'
         address='my-bookings'
       />
-
-
     </>
   )
 }

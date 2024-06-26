@@ -17,6 +17,7 @@ export const saveBookingInfo = async paymentInfo => {
 
 // get all bookings for a guest by email
 export const getBookings = async email => {
-  const { data } = await axiosSecure(`/bookings?email=${email}`)
+  const { data } = await axiosSecure(`/bookings`)
+  console.log(email)
   return data
 }
