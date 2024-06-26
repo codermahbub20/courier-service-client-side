@@ -19,6 +19,8 @@ import PrivateRoute from "./PrivateRoute";
 import HostRoute from "./HostRoute";
 import AdminRoute from "./AdminRoute";
 import Tracking1 from "../Components/Pages/Home/PackageTracking/UserPackageTracking/Tracking1";
+import Contact from "../Components/Pages/Home/Contact/Contact";
+import AdminStatistics from "../Components/DashBoard/Admin/Statistics";
 
 
 export const router = createBrowserRouter([
@@ -40,6 +42,10 @@ export const router = createBrowserRouter([
             {
                 path: "/online-tracking",
                 element: <Tracking1/>
+            },
+            {
+                path: "/contact",
+                element: <Contact/>
             },
             {
                 path: "/online-booking",
@@ -64,6 +70,14 @@ export const router = createBrowserRouter([
             <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>
         ,
         children: [
+            {
+                index: true,
+                element: (
+                  <PrivateRoute>
+                    <AdminStatistics />
+                  </PrivateRoute>
+                ),
+              },
             {
                 path: "profile",
                 element: <PrivateRoute><Profile /></PrivateRoute>
