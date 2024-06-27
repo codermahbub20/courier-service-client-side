@@ -8,7 +8,7 @@ const AdminMenu = () => {
     <MenuItem
                 icon={BsGraphUp}
                 label='Statistics'
-                address='/dashboard'
+                address='/dashboard/statistics'
               />
 
       <MenuItem icon={FaUserCog} label='Manage Users' address='manage-users' />

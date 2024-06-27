@@ -11,16 +11,19 @@ import Profile from "../Components/Common/Profile";
 import CreatePackage from "../Components/DashBoard/Host/CreatePackage/CreatePackage";
 import DeliverySchedule from "../Components/DashBoard/Host/DeliverySchedule/DeliverySchedule";
 import ManageUsers from "../Components/DashBoard/Admin/ManageUsers";
-import Tracking from "../Components/Pages/Home/PackageTracking/Tracking";
 import OnlineBookings from "../Components/Pages/Home/OnlineBooking/OnlineBookings";
 import MyBookings from "../Components/DashBoard/Guest/MyBookings";
 import OnlineSchedule from "../Components/DashBoard/Host/OnlineSchedule/OnlineSchedule";
 import PrivateRoute from "./PrivateRoute";
 import HostRoute from "./HostRoute";
 import AdminRoute from "./AdminRoute";
-import Tracking1 from "../Components/Pages/Home/PackageTracking/UserPackageTracking/Tracking1";
 import Contact from "../Components/Pages/Home/Contact/Contact";
 import AdminStatistics from "../Components/DashBoard/Admin/Statistics";
+import About from "../Components/Pages/Home/About/About";
+import PackageTracking from "../Components/Pages/Home/PackageTracking/PackageTracking";
+import OnlineTracking from "../Components/Pages/Home/OnlineBookedTracking/OnlineTracking";
+// import ProductTracking from "../Components/Pages/Home/PackageTracking/ProductTracking";
+// import Tracking1 from "../Components/Pages/Home/WorkForce/UserPackageTracking/Tracking1";
 
 
 export const router = createBrowserRouter([
@@ -36,16 +39,20 @@ export const router = createBrowserRouter([
                 element: <Home />
             },
             {
+                path: "/contact",
+                element: <Contact />
+            },
+            {
                 path: "/tracking",
-                element: <Tracking />
+                element: <PackageTracking />
             },
             {
                 path: "/online-tracking",
-                element: <Tracking1/>
+                element: <OnlineTracking/>
             },
             {
-                path: "/contact",
-                element: <Contact/>
+                path: "/about",
+                element: <About />
             },
             {
                 path: "/online-booking",
@@ -70,14 +77,7 @@ export const router = createBrowserRouter([
             <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>
         ,
         children: [
-            {
-                index: true,
-                element: (
-                  <PrivateRoute>
-                    <AdminStatistics />
-                  </PrivateRoute>
-                ),
-              },
+
             {
                 path: "profile",
                 element: <PrivateRoute><Profile /></PrivateRoute>
@@ -113,6 +113,14 @@ export const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <AdminRoute>
                         <ManageUsers />
+                    </AdminRoute>
+                </PrivateRoute>
+            },
+            {
+                path: "statistics",
+                element: <PrivateRoute>
+                    <AdminRoute>
+                        <AdminStatistics />
                     </AdminRoute>
                 </PrivateRoute>
             },

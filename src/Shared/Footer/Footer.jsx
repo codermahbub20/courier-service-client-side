@@ -86,7 +86,7 @@ const Footer = () => {
           <span className="text-sm text-white sm:text-center dark:text-gray-400">
             © 2024{" "}
             <a href="" className="hover:underline">
-              Event™
+              Niyamat™
             </a>
             . All Rights Reserved by Niyamt Courier.
           </span>
